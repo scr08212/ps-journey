@@ -1,2 +1,5 @@
 # ps-journey
-Solving algorithm problems daily from Baekjoon, Programmers, and more.
+
+[타임라인]
+
+2025-08-01 시작 (시작 기준 백준 골드 3)
