@@ -9,18 +9,12 @@ using namespace std;
 vector<int> solution(vector<int> emergency) {
     vector<int> answer;
     vector<int> sorted(emergency);
-    map<int, int> m;
     
     sort(sorted.begin(), sorted.end(), greater<int>());
     
-    for(int i = 0; i<sorted.size(); i++)
-    {
-        m[sorted[i]] = i+1;
-    }
-    
     for(int item: emergency)
     {
-        answer.push_back(m[item]);
+        answer.push_back(distance(sorted.begin(), find(sorted.begin(), sorted.end(), item) + 1));
     }
     
     return answer;
