@@ -25,13 +25,11 @@ void solve(int idx, int cnt)
 		{
 			auto house = houses[i];
 			int distance = INT_MAX;
-			for (int j = 0; j<chickens.size(); j++)
-			{
-				if (find(selected.begin(), selected.end(), j) == selected.end())
-					continue;
-				auto chicken = chickens[j];
-				distance = min(distance, abs(house.first - chicken.first) + abs(house.second - chicken.second));
-			}
+            for(auto idx : selected)
+            {
+                auto chicken = chickens[idx];
+                distance = min(distance, abs(house.first - chicken.first) + abs(house.second - chicken.second));
+            }
 			sum += distance;
 		}
 		answer = min(sum, answer);
